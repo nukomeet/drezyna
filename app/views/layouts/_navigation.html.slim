@@ -1,0 +1,27 @@
+nav.top-bar[data-topbar]
+  ul.title-area
+    li.name
+      = link_to 'Home', root_path
+    li.toggle-topbar.menu-icon
+      a[href="#"]
+        Menu
+  .top-bar-section
+    - if user_signed_in?
+      ul.left
+        li
+          = link_to 'Dashboard', root_path
+        li
+          = link_to 'Users', users_path
+    ul.right
+      li.divider
+      - if user_signed_in?
+        li.has-dropdown
+          = link_to 'Account', '#'
+          ul.dropdown
+            li
+              label Settings
+            li= link_to 'Profile', edit_user_registration_path
+            li.divider
+            li= link_to 'Logout', destroy_user_session_path, method: 'delete'
+      - else
+        li= link_to 'Login', new_user_session_path

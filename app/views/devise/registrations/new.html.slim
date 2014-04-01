@@ -1,0 +1,14 @@
+.row
+  .large-6.large-centered.columns
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-vertical' }) do |f|
+      h3= f.error_notification
+      = display_base_errors resource
+
+      = f.input :name, autofocus: true, label: false, placeholder: 'Name'
+      = f.input :email, label: false, placeholder: 'Email'
+      = f.input :password, label: false, placeholder: 'Password'
+      = f.input :password_confirmation, label: false, placeholder: 'Password confirmation'
+
+      = f.button :submit, 'Sign up', class: 'button right'
+
+    = render "devise/shared/links"

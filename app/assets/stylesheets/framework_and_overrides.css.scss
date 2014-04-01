@@ -1,0 +1,26 @@
+// import the CSS framework
+@import "foundation";
+
+body {
+  border-top: 3px solid #00aed1;
+}
+.top-bar .name {
+  font-size: rem-calc(13);
+  line-height: 45px; }
+.top-bar .name a {
+  font-weight: normal;
+  color: white;
+  padding: 0 15px; }
+
+.row {
+  margin-top: 24px;
+}
+
+label.checkbox input {
+  margin-right: 6px;
+}
+
+.alert-box.round {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}

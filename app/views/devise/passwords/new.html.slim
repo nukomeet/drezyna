@@ -1,0 +1,11 @@
+.row
+  .large-6.large-centered.columns
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: 'form'}) do |f|
+      h3 Forgot your password?
+      p We'll send password reset instructions.
+
+      = devise_error_messages!
+
+      = f.input :email, autofocus: true, label: false, placeholder: 'Your email'
+
+      = f.submit 'Reset Password', class: 'button right'

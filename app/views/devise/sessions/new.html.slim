@@ -1,0 +1,15 @@
+.row
+  .large-6.large-centered.columns
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-vertical' }) do |f|
+      .row
+        .large-6.columns
+          = f.input :email, required: false, autofocus: true, label: false, placeholder: 'Email'
+        .large-6.columns
+          = f.input :password, required: false, label: false, placeholder: 'Password'
+      .row
+        .large-12.columns
+          = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+
+      = f.button :submit, "Login", class: 'button right'
+
+    = render "devise/shared/links"
