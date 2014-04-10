@@ -58,6 +58,19 @@ Usage
 git clone https://github.com/nukomeet/drezyna
 ```
 
+### Adjust DB configuration:
+
+```sh
+curl -O config/database.yml https://gist.github.com/zaiste/10378957
+```
+
+Replace `NAME` and `USER_NAME` with your own values.
+
+```
+rake db:create
+rake db:migrate
+```
+
 ### Rename the application
 
 ```sh
@@ -67,13 +80,11 @@ bundle
 rails g rename:app_to SampleApp
 ```
 
-### Adjust DB configuration:
+### Launch
 
-```sh
-touch config/database.yml
 ```
-
-You can adjust its content based on [this gist][13].
+rails s
+```
 
 Open `localhost:3000` and enjoy your new application.
 
