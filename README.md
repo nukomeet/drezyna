@@ -61,7 +61,7 @@ git clone https://github.com/nukomeet/drezyna
 ### Adjust DB configuration:
 
 ```sh
-curl -O config/database.yml https://gist.github.com/zaiste/10378957
+curl -o config/database.yml https://gist.githubusercontent.com/zaiste/10378957/raw/50dfe7f2dd2050e2903aff187fb7e11ec702fc15/database.yml
 ```
 
 Replace `NAME` and `USER_NAME` with your own values.
