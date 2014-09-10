@@ -80,3 +80,6 @@ pickle-email-*.html
 .powenv
 
 .ruby-version
+
+# Ignore compiled assets
+public/assets
