@@ -22,7 +22,7 @@ gem 'thin'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'foreman'
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -34,7 +34,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'minitest-capybara'
   gem 'minitest-spec-rails'
-  gem 'minitest-wscolor'
+  gem 'minitest-reporters'
 end
