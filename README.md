@@ -14,11 +14,9 @@ Setup
 
 PostgreSQL 9.3 with ActiveRecord
 
-
 ### Testing:
 
 [minitest][3] with [fabrication][4]
-
 
 ### Auth
 
@@ -64,11 +62,17 @@ git clone https://github.com/nukomeet/drezyna
 curl -o config/database.yml https://gist.githubusercontent.com/zaiste/10378957/raw/50dfe7f2dd2050e2903aff187fb7e11ec702fc15/database.yml
 ```
 
-Replace `NAME` and `USER_NAME` with your own values.
+Edit `config/database.yml` and replace `NAME` and `USER_NAME` with your own values.
+
+Edit `test/fixtures/users.yml` and put at least one user.
+
+Edit `config/secrets.yml` and provide an email for the admin user.
 
 ```
 rake db:create
 rake db:migrate
+rake db:fixtures:load
+rake db:seed
 ```
 
 ### Rename the application
