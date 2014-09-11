@@ -38,3 +38,5 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'minitest-wscolor'
 end
+
+gem 'rails_12factor', group: :production
