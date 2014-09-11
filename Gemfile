@@ -2,15 +2,17 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 
-gem 'rails', '4.1.0.rc2'
+gem 'rails'
+gem 'sprockets', '2.11.0'
 gem 'pg'
-gem 'sass-rails', '~> 4.0.2'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass', '3.2.13'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'jbuilder'
+gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
 gem 'devise'
 gem 'compass-rails'
@@ -34,9 +36,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'minitest-capybara'
   gem 'minitest-spec-rails'
-  gem 'minitest-wscolor'
+  gem 'minitest-reporters'
 end
 
 gem 'rails_12factor', group: :production
