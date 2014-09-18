@@ -27,6 +27,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'brakeman', require: false
   gem 'foreman'
+  gem 'lol_dba'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rename'
