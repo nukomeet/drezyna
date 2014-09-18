@@ -25,6 +25,7 @@ gem 'thin'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'brakeman', require: false
   gem 'foreman'
   gem 'quiet_assets'
   gem 'rails_layout'
