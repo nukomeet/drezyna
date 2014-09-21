@@ -16,7 +16,7 @@ gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
 gem 'devise'
 gem 'compass-rails'
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
