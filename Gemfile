@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
-
 gem 'rails'
 gem 'sprockets', '2.11.0'
 gem 'pg'
