@@ -78,6 +78,9 @@ pickle-email-*.html
 # Environment files that may contain sensitive data
 .env
 .powenv
+.env.development
+.env.production
+.env.staging
 
 .ruby-version
 
