@@ -109,6 +109,8 @@ export ADMIN_PASSWORD='bienvenue'
 export MANDRILL_USERNAME='name@domain.com'
 export MANDRILL_APIKEY='CHANGEME'
 export SECRET_KEY_BASE='<run `rake secret` command and put here the result>'
+export NEW_RELIC_LICENSE_KEY='CHANGEME'
+export NEW_RELIC_APP_NAME='CHANGEME'
 " > .powenv
 ```
 
