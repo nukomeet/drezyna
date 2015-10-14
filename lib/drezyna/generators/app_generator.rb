@@ -37,6 +37,7 @@ module Drezyna
       build :setup_application
 
       build :setup_stylesheets
+      build :setup_javascripts
 
       say 'Setting up devise'
       build :setup_devise

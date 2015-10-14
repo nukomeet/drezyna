@@ -31,6 +31,8 @@ module Drezyna
     end
 
     def setup_javascripts
+      remove_file 'app/assets/javascripts/application.js'
+      copy_file 'application.js', 'app/assets/javascripts/application.js'
     end
 
     def setup_application
@@ -72,6 +74,7 @@ module Drezyna
       generate.request_specs false
       generate.routing_specs false
       generate.stylesheets false
+      generate.javascripts false
       generate.test_framework :rspec
       generate.view_specs false
     end
