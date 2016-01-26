@@ -89,7 +89,7 @@ module Drezyna
                             "Logger.new(Rails.root.join('log/i18n.log'))"
     end
 
-    def setup_devise 
+    def setup_devise
       generate 'devise:install'
       generate 'controller', 'home index'
       generate 'devise', options[:devise_model]

@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'rails/generators/rails/app/app_generator'
 
-module Drezyna 
+module Drezyna
   class AppGenerator < Rails::Generators::AppGenerator
     class_option :database, type: :string, aliases: "-d", default: "postgresql",
       desc: "Configure for selected database (options: #{DATABASES.join("/")})"
@@ -20,7 +20,7 @@ module Drezyna
       super
     end
 
-    def custom 
+    def custom
       say 'Setting up database'
       build :use_postgres_config_template
       build :create_database
