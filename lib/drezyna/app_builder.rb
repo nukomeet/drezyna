@@ -102,5 +102,21 @@ module Drezyna
     def init_git
       run 'git init'
     end
+
+    def setup_identities
+      replace_in_file "app/models/user.rb",
+                      /end\Z/,
+                      <<-RUBY
+
+  has_many :identities, dependent: :destroy
+
+#{oauth_methods}
+end
+RUBY
+
+      generate :model, "identity user:references provider:string uid:string timestamps"
+
+      copy_file 'identity.rb', 'app/models/identity.rb', force: true
+    end
   end
 end

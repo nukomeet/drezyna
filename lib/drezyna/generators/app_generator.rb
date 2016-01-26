@@ -49,6 +49,10 @@ module Drezyna
 
       build :setup_routes
 
+      if yes?("Do you want the User to have many identities?")
+        build :setup_identities
+      end
+
       say 'Initializing git'
       build :setup_gitignore
       build :init_git
