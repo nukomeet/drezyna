@@ -34,6 +34,8 @@ module Drezyna
       build :create_application_layout
       build :create_pryrc
 
+      run "bundle install"
+
       build :setup_application
 
       build :setup_stylesheets
