@@ -15,12 +15,6 @@ module Drezyna
       File.open(path, "w") { |file| file.write(contents) }
     end
 
-    def make_user_omniauthable
-      replace_in_file "app/models/user.rb",
-                      /, :validatable$/,
-                      ", :validatable,\n         :omniauthable"
-    end
-
     def oauth_methods
       <<-RUBY
   TEMP_EMAIL_PREFIX = 'change@me'

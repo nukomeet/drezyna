@@ -50,8 +50,15 @@ module Drezyna
       build :setup_routes
 
       if yes?("Do you want the User to have many identities?")
+        gem 'omniauth'
+        run "bundle install" # needed since we're going to run generator
         build :setup_identities
-        gem "omniauth"
+      end
+
+      if yes?("Do you want to use Github's omniauth?")
+        gem 'omniauth'
+        gem 'omniauth-github'
+        build :setup_github
       end
 
       say 'Initializing git'
