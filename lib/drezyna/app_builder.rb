@@ -117,6 +117,8 @@ RUBY
       generate :model, "identity user:references provider:string uid:string timestamps"
 
       copy_file 'identity.rb', 'app/models/identity.rb', force: true
+
+      make_user_omniauthable
     end
   end
 end

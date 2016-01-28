@@ -51,6 +51,7 @@ module Drezyna
 
       if yes?("Do you want the User to have many identities?")
         build :setup_identities
+        gem "omniauth"
       end
 
       say 'Initializing git'
