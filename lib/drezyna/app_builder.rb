@@ -103,22 +103,47 @@ module Drezyna
       run 'git init'
     end
 
+    def setup_github
+      template "user.rb/github.rb", "app/models/user.rb", force: true
+
+      replace_in_file "config/initializers/devise.rb",
+                      /  # ==> OmniAuth.+config\.omniauth[^\n]+/m,
+                      <<-RUBY
+
+  config.omniauth :github,
+                  Rails.application.secrets.github_client_id,
+                  Rails.application.secrets.github_client_secret,
+                  scope: 'user:email'
+RUBY
+
+      replace_in_file "config/secrets.yml",
+                      /  secret_key_base: (.+)$/,
+                      <<-YAML
+  secret_key_base: \\1
+  github_client_id: CHANGEME
+  github_client_secret: CHANGEME
+YAML
+
+      add_oauth_method
+    end
+
     def setup_identities
+      template "user.rb/identities.rb", "app/models/user.rb", force: true
+
+      generate :model, "identity user:references provider:string uid:string timestamps"
+      copy_file 'identity.rb', 'app/models/identity.rb', force: true
+
+      add_oauth_method
+    end
+
+    def add_oauth_method
       replace_in_file "app/models/user.rb",
                       /end\Z/,
                       <<-RUBY
 
-  has_many :identities, dependent: :destroy
-
 #{oauth_methods}
 end
 RUBY
-
-      generate :model, "identity user:references provider:string uid:string timestamps"
-
-      copy_file 'identity.rb', 'app/models/identity.rb', force: true
-
-      make_user_omniauthable
     end
   end
 end
